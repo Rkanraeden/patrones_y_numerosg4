@@ -109,29 +109,77 @@ print "\n"
 # 1 0 0 1 1
 # 1 1 1 1 1 
 
-#cover debe darnos num"*" por lo que se usará para arriba y para abajo.
-def cover(num)
-    num.times do 
-        print "* " 
-    end
-    print "\n"
-end
 
-# middle nos dará "*" num " " "*" 
-def middle(num)
-    print "* "
-    (num-2).times do |i|
-        print "  "
-    end
-    print "* "
-    print "\n"
-end
-def numero_0(num)
+def numero_cero(num)
     cover(num)
-    (num-2).times do |i|
-        middle(num)
-    end
+        (num-2).times do |i|
+            print "*"
+        (num-2).times do |j|
+            if i == j
+                print "*" 
+            else
+                print " "
+            end
+        end
+            print "*"
+            print "\n"
+        end
     cover(num)
 end
+  numero_cero(5)
 
-numero_0(5)
+  print "\n"
+  
+  # letra z
+
+def diagonal(num)
+    (num-2).times do |i|
+        num.times do |j|
+        if j == num-1-i
+            print "*"
+        else
+            print " "
+        end
+        end
+            print "\n"
+    end  
+end
+def letra_z(num)
+    cover(num) 
+    diagonal(num)
+    cover(num) 
+end
+letra_z(5)
+
+# Arbol de navidad
+
+
+#Método navidad(n)
+def navidad(num)
+    for i in 0..(num-1)
+        (num - i).times do
+        print " "
+        end
+        i.times do
+        print "* "
+        end
+        print "\n"
+end
+
+(num-3).times do |i|
+    num.times do |j|
+        if j == num/2
+            print "  *"
+        else
+            print " "
+        end
+    end 
+        print "\n"
+    end
+        print " "
+    (num-2).times do |i|
+        print " *"
+    end
+        print " "
+end
+navidad(7)
